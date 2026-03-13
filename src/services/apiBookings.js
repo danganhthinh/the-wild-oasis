@@ -1,7 +1,7 @@
 import apiClient from "./apiClient";
 import { PAGE_SIZE } from "../utils/Constants";
 
-const API_URL = "http://localhost:3000";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const mapCabinImage = (cabin) => {
   if (!cabin) return cabin;
