@@ -1,5 +1,5 @@
 import apiClient from "./apiClient";
-import { PAGE_SIZE } from "../utils/Constants";
+import { PAGE_SIZE } from "../utils/constants";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
