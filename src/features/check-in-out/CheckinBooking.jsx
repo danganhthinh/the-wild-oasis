@@ -32,13 +32,15 @@ function CheckinBooking() {
   if (isLoading || isLoadingSettings) return <Spinner />;
 
   const {
-    id: bookingId,
+    id,
+    _id,
     guests,
     totalPrice,
     numGuests,
     hasBreakfast,
     numNights,
   } = booking;
+  const bookingId = id || _id;
   const optionalBreakFastPrice =
     settings?.breakfastPrice * numNights * numGuests;
   const overallPrice = optionalBreakFastPrice + totalPrice;

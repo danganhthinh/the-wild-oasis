@@ -39,7 +39,8 @@ function BookingDetail() {
     useDeleteBooking();
   if (isLoading) return <Spinner />;
   if (!booking) return <Empty resource="booking" />;
-  const { status, id: bookingId } = booking;
+  const { status, id, _id } = booking;
+  const bookingId = id || _id;
   const statusToTagName = {
     unconfirmed: "blue",
     "checked-in": "green",

@@ -41,7 +41,9 @@ function CabinTable() {
         </Table.Header>
         <Table.Body
           data={sortedCabins}
-          render={(cabin) => <CabinRow cabin={cabin} key={cabin.id} />}
+          render={(cabin) => (
+            <CabinRow cabin={cabin} key={cabin.id || cabin._id} />
+          )}
         />
       </Table>
     </Menus>

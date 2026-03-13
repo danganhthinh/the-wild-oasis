@@ -10,7 +10,7 @@ export function useCheckout() {
         status: "checked-out",
       }),
     onSuccess: (data) => {
-      toast.success(`Booking #${data.id} checked out successfully`);
+      toast.success(`Booking #${data.id || data._id} checked out successfully`);
       queryClient.invalidateQueries({ active: true });
     },
     onError: () => {

@@ -46,8 +46,10 @@ const Amount = styled.div`
 
 function BookingRow({
   booking: {
-    id: bookingId,
+    id,
+    _id,
     created_at,
+    createdAt,
     startDate,
     endDate,
     numNights,
@@ -58,6 +60,8 @@ function BookingRow({
     cabins: { name: cabinName },
   },
 }) {
+  const bookingId = id || _id;
+  const bookingDate = createdAt || created_at;
   const statusToTagName = {
     unconfirmed: "blue",
     "checked-in": "green",

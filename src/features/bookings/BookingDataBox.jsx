@@ -104,7 +104,10 @@ const Footer = styled.footer`
 // A purely presentational component
 function BookingDataBox({ booking }) {
   const {
+    id,
+    _id,
     created_at,
+    createdAt,
     startDate,
     endDate,
     numNights,
@@ -118,6 +121,8 @@ function BookingDataBox({ booking }) {
     guests: { fullName: guestName, email, country, countryFlag, nationalID },
     cabins: { name: cabinName },
   } = booking;
+
+  const bookingDate = createdAt || created_at;
 
   return (
     <StyledBookingDataBox>
@@ -178,7 +183,7 @@ function BookingDataBox({ booking }) {
       </Section>
 
       <Footer>
-        <p>Booked {format(new Date(created_at), "EEE, MMM dd yyyy, p")}</p>
+        <p>Booked {format(new Date(bookingDate), "EEE, MMM dd yyyy, p")}</p>
       </Footer>
     </StyledBookingDataBox>
   );

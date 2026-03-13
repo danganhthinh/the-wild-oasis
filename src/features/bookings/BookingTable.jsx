@@ -8,8 +8,8 @@ import Pagination from "../../ui/Pagination";
 function BookingTable() {
   // const bookings = [];
   const { bookings, isLoading, count } = useBookings();
-  if (!bookings?.length) return <Empty resource="bookings" />;
   if (isLoading) return <Spinner />;
+  if (!bookings?.length) return <Empty resource="bookings" />;
 
   return (
     <Menus>
@@ -26,7 +26,7 @@ function BookingTable() {
         <Table.Body
           data={bookings}
           render={(booking) => (
-            <BookingRow key={booking.id} booking={booking} />
+            <BookingRow key={booking.id || booking._id} booking={booking} />
           )}
         />
         <Table.Footer>
